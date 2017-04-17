@@ -50,4 +50,11 @@ public class TagRecorder {
 		return this.table.get(tag_id);
 	}
 	
+	/**
+	 * Remove the recorded tags.
+	 */
+	public void clearRecords() {
+		this.table = new HashMap<String,Integer>();
+	}
+	
 }

@@ -64,6 +64,7 @@ public class MessageReceiver implements MessageListener {
 			AlienReaderNotValidException, AlienReaderTimeoutException, 
 			AlienReaderConnectionException, AlienReaderException, IOException {
 		
+		this.inv.clearRecords();
 		this.num_reads = 0;
 		this.reader.open();
 		if (this.reader.isOpen())

@@ -93,7 +93,7 @@ public class LoginReader extends JFrame{
 		
 		setSize(200, 200);
 		setVisible(true);
-		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
 	}
 
 }
