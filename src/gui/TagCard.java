@@ -25,37 +25,29 @@ public class TagCard extends JPanel {
 	JLabel icon;
 	
 	public TagCard(String id, String readRate, String sucessRate, int rate) {
-		
-		
 		if (rate == 0) {
 			this.icon = new JLabel(
-					new ImageIcon(new ImageIcon("/home/oaugusto/workspace/RFIDReader"
-							+ "/RFIDReader/images/s1.png")
+					new ImageIcon(new ImageIcon("bin/RFIDReader/images/s1.png")
 							.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT)));
 		} else if(rate <= 20 && rate > 0) {
 			this.icon = new JLabel(
-					new ImageIcon(new ImageIcon("/home/oaugusto/workspace/RFIDReader"
-							+ "/RFIDReader/images/s2.png")
+					new ImageIcon(new ImageIcon("bin/RFIDReader/images/s2.png")
 							.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT)));
 		} else if(rate <= 40 && rate > 20) {
 			this.icon = new JLabel(
-					new ImageIcon(new ImageIcon("/home/oaugusto/workspace/RFIDReader"
-							+ "/RFIDReader/images/s3.png")
+					new ImageIcon(new ImageIcon("bin/RFIDReader/images/s3.png")
 							.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT)));
 		} else if(rate <= 60 && rate > 40) {
 			this.icon = new JLabel(
-					new ImageIcon(new ImageIcon("/home/oaugusto/workspace/RFIDReader"
-							+ "/RFIDReader/images/s4.png")
+					new ImageIcon(new ImageIcon("bin/RFIDReader/images/s4.png")
 							.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT)));
 		} else if(rate <= 80 && rate > 60) {
 			this.icon = new JLabel(
-					new ImageIcon(new ImageIcon("/home/oaugusto/workspace/RFIDReader"
-							+ "/RFIDReader/images/s5.png")
+					new ImageIcon(new ImageIcon("bin/RFIDReader/images/s5.png")
 							.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT)));
 		} else if(rate <= 100 && rate > 80) {
 			this.icon = new JLabel(
-					new ImageIcon(new ImageIcon("/home/oaugusto/workspace/RFIDReader"
-							+ "/RFIDReader/images/s6.png")
+					new ImageIcon(new ImageIcon("bin/RFIDReader/images/s6.png")
 							.getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT)));
 		}
 		add(this.icon);
