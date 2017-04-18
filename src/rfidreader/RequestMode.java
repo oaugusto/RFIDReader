@@ -31,13 +31,15 @@ public class RequestMode {
 		long start = System.currentTimeMillis();
 		while(System.currentTimeMillis() - start <= Parameters.TIME_MS){
 			Tag[] tagList = reader.getTagList();
-			for (int i = 0; i < tagList.length; i++){
-				Tag tag = tagList[i];
-				int auxQuantidade = 0;
-				if (leitura.containsKey(tag.getTagID()))
-					auxQuantidade = leitura.get(tag.getTagID());
-				leitura.put(tag.getTagID(), auxQuantidade + 1);
-			}
+                        if(tagList != null){
+                            for (int i = 0; i < tagList.length; i++){
+                                    Tag tag = tagList[i];
+                                    int auxQuantidade = 0;
+                                    if (leitura.containsKey(tag.getTagID()))
+                                            auxQuantidade = leitura.get(tag.getTagID());
+                                    leitura.put(tag.getTagID(), auxQuantidade + 1);
+                            }
+                        }
 		}
 		reader.close();
 		
@@ -52,14 +54,16 @@ public class RequestMode {
 		
 		Map<String, Integer> leitura = new HashMap<String, Integer>();
 		for (int n = 0; n < nReads; n++){
-			Tag[] tagList = reader.getTagList();	
-			for (int i = 0; i < tagList.length; i++){
-				Tag tag = tagList[i];
-				int auxQuantidade = 0;
-				if (leitura.containsKey(tag.getTagID()))
-					auxQuantidade = leitura.get(tag.getTagID());
-				leitura.put(tag.getTagID(), auxQuantidade + 1);
-			}
+			Tag[] tagList = reader.getTagList();
+                        if(tagList != null){
+                            for (int i = 0; i < tagList.length; i++){
+                                    Tag tag = tagList[i];
+                                    int auxQuantidade = 0;
+                                    if (leitura.containsKey(tag.getTagID()))
+                                            auxQuantidade = leitura.get(tag.getTagID());
+                                    leitura.put(tag.getTagID(), auxQuantidade + 1);
+                            }
+                        }
 		}
 		
 
@@ -103,8 +107,11 @@ public class RequestMode {
                     sRead = "" + readRate.get(entry.getKey())/(Parameters.TIME_MS/1000);
                     sSuccess = "" + entry.getValue();
                     rate = Integer.parseInt(sSuccess);
-                    list[i] = new TagCard(entry.getKey(), sRead, sSuccess, rate );
-                    i++;
+                    sSuccess = "" + entry.getValue() + "%";
+                    if((rate != 0) && (Integer.parseInt(sRead) != 0)){
+                        list[i] = new TagCard(entry.getKey(), sRead, sSuccess, rate );
+                        i++;
+                    }
                     //System.out.println(entry.getValue() + "% success rate ID " + entry.getKey());
 
                 }      
